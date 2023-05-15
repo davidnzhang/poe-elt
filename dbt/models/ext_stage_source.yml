@@ -1,0 +1,520 @@
+version: 2
+
+sources:
+- name: external
+  database: POE_ELT
+  schema: EXTERNALS
+  loader: GCP
+  tables:
+    - name: ext_unique_weapon
+      ext_full_refresh: true
+      description: >
+        External table for unique weapon stats and economy data
+      external:
+        location: "@poe_elt.externals.gs_economy/economy/unique_weapon"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+      columns:
+        - name: id
+          data_type: number
+        - name: name
+          data_type: varchar
+        - name: levelRequired
+          data_type: number
+        - name: baseType
+          data_type: text
+        - name: links
+          data_type: number
+        - name: itemClass
+          data_type: text
+        - name: implicitModifiers
+          data_type: variant
+        - name: explicitModifiers
+          data_type: variant
+        - name: flavourText
+          data_type: varchar
+        - name: itemType
+          data_type: text
+        - name: chaosValue
+          data_type: number
+        - name: exaltedValue
+          data_type: number
+        - name: divineValue
+          data_type: number
+        - name: count
+          data_type: number
+        - name: detailsId
+          data_type: varchar
+        - name: listingCount
+          data_type: number
+        - name: variant
+          data_type: varchar
+    - name: ext_unique_armour
+      ext_full_refresh: true
+      description: >
+        External table for unique armour stats and economy data
+      external:
+        location: "@poe_elt.externals.gs_economy/economy/unique_armour"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+      columns:
+        - name: id
+          data_type: number
+        - name: name
+          data_type: varchar
+        - name: levelRequired
+          data_type: number
+        - name: baseType
+          data_type: text
+        - name: links
+          data_type: number
+        - name: itemClass
+          data_type: text
+        - name: implicitModifiers
+          data_type: variant
+        - name: explicitModifiers
+          data_type: variant
+        - name: flavourText
+          data_type: varchar
+        - name: itemType
+          data_type: text
+        - name: chaosValue
+          data_type: number
+        - name: exaltedValue
+          data_type: number
+        - name: divineValue
+          data_type: number
+        - name: count
+          data_type: number
+        - name: detailsId
+          data_type: varchar
+        - name: listingCount
+          data_type: number
+        - name: variant
+          data_type: varchar
+    - name: ext_unique_accessory
+      ext_full_refresh: true
+      description: >
+        External table for unique accessory stats and economy data
+      external:
+        location: "@poe_elt.externals.gs_economy/economy/unique_accessory"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+      columns:
+        - name: id
+          data_type: number
+        - name: name
+          data_type: varchar
+        - name: levelRequired
+          data_type: number
+        - name: baseType
+          data_type: text
+        - name: links
+          data_type: number
+        - name: itemClass
+          data_type: text
+        - name: implicitModifiers
+          data_type: variant
+        - name: explicitModifiers
+          data_type: variant
+        - name: flavourText
+          data_type: varchar
+        - name: itemType
+          data_type: text
+        - name: chaosValue
+          data_type: number
+        - name: exaltedValue
+          data_type: number
+        - name: divineValue
+          data_type: number
+        - name: count
+          data_type: number
+        - name: detailsId
+          data_type: varchar
+        - name: listingCount
+          data_type: number
+        - name: variant
+          data_type: varchar
+    - name: ext_unique_flask
+      ext_full_refresh: true
+      description: >
+        External table for unique flask stats and economy data
+      external:
+        location: "@poe_elt.externals.gs_economy/economy/unique_flask"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+      columns:
+        - name: id
+          data_type: number
+        - name: name
+          data_type: varchar
+        - name: levelRequired
+          data_type: number
+        - name: baseType
+          data_type: text
+        - name: links
+          data_type: number
+        - name: itemClass
+          data_type: text
+        - name: implicitModifiers
+          data_type: variant
+        - name: explicitModifiers
+          data_type: variant
+        - name: flavourText
+          data_type: varchar
+        - name: itemType
+          data_type: text
+        - name: chaosValue
+          data_type: number
+        - name: exaltedValue
+          data_type: number
+        - name: divineValue
+          data_type: number
+        - name: count
+          data_type: number
+        - name: detailsId
+          data_type: varchar
+        - name: listingCount
+          data_type: number
+        - name: variant
+          data_type: varchar
+    - name: ext_unique_jewel
+      ext_full_refresh: true
+      description: >
+        External table for unique jewel stats and economy data
+      external:
+        location: "@poe_elt.externals.gs_economy/economy/unique_jewel"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+      columns:
+        - name: id
+          data_type: number
+        - name: name
+          data_type: varchar
+        - name: levelRequired
+          data_type: number
+        - name: baseType
+          data_type: text
+        - name: links
+          data_type: number
+        - name: itemClass
+          data_type: text
+        - name: implicitModifiers
+          data_type: variant
+        - name: explicitModifiers
+          data_type: variant
+        - name: flavourText
+          data_type: varchar
+        - name: itemType
+          data_type: text
+        - name: chaosValue
+          data_type: number
+        - name: exaltedValue
+          data_type: number
+        - name: divineValue
+          data_type: number
+        - name: count
+          data_type: number
+        - name: detailsId
+          data_type: varchar
+        - name: listingCount
+          data_type: number
+        - name: variant
+          data_type: varchar
+    - name: ext_skill_gem
+      ext_full_refresh: true
+      description: >
+        External table for skill gem stats and economy data
+      external:
+        location: "@poe_elt.externals.gs_economy/economy/skill_gem"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+      columns:
+        - name: id
+          data_type: number
+        - name: name
+          data_type: varchar
+        - name: levelRequired
+          data_type: number
+        - name: baseType
+          data_type: text
+        - name: links
+          data_type: number
+        - name: itemClass
+          data_type: text
+        - name: implicitModifiers
+          data_type: variant
+        - name: explicitModifiers
+          data_type: variant
+        - name: flavourText
+          data_type: varchar
+        - name: itemType
+          data_type: text
+        - name: chaosValue
+          data_type: number
+        - name: exaltedValue
+          data_type: number
+        - name: divineValue
+          data_type: number
+        - name: count
+          data_type: number
+        - name: detailsId
+          data_type: varchar
+        - name: listingCount
+          data_type: number
+        - name: variant
+          data_type: varchar
+    - name: ext_cluster_jewel
+      ext_full_refresh: true
+      description: >
+        External table for cluster jewel stats and economy data
+      external:
+        location: "@poe_elt.externals.gs_economy/economy/cluster_jewel"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+      columns:
+        - name: id
+          data_type: number
+        - name: name
+          data_type: varchar
+        - name: levelRequired
+          data_type: number
+        - name: baseType
+          data_type: text
+        - name: links
+          data_type: number
+        - name: itemClass
+          data_type: text
+        - name: implicitModifiers
+          data_type: variant
+        - name: explicitModifiers
+          data_type: variant
+        - name: flavourText
+          data_type: varchar
+        - name: itemType
+          data_type: text
+        - name: chaosValue
+          data_type: number
+        - name: exaltedValue
+          data_type: number
+        - name: divineValue
+          data_type: number
+        - name: count
+          data_type: number
+        - name: detailsId
+          data_type: varchar
+        - name: listingCount
+          data_type: number
+        - name: variant
+          data_type: varchar
+    - name: ext_active_skill_use
+      ext_full_refresh: true
+      description: >
+        External table for active skill usage & foreign key data from builds
+      external:
+        location: "@poe_elt.externals.gs_build/activeskilluse"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_all_skill_use
+      ext_full_refresh: true
+      description: >
+        External table for all skill usage & foreign key data from builds
+      external:
+        location: "@poe_elt.externals.gs_build/allskilluse"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_unique_item_use
+      ext_full_refresh: true
+      description: >
+        External table for unique item usage & foreign key data from builds
+      external:
+        location: "@poe_elt.externals.gs_build/uniqueitemuse"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_keystone_use
+      ext_full_refresh: true
+      description: >
+        External table for keystone usage & foreign key data from builds
+      external:
+        location: "@poe_elt.externals.gs_build/keystoneuse"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_mastery_use
+      ext_full_refresh: true
+      description: >
+        External table for mastery usage & foreign key data from builds
+      external:
+        location: "@poe_elt.externals.gs_build/masteryuse"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_active_skills
+      ext_full_refresh: true
+      description: >
+        External table for active skills primary keys from builds
+      external:
+        location: "@poe_elt.externals.gs_build/activeskills"
+        file_format: >
+          ( TYPE = JSON )
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_all_skills
+      ext_full_refresh: true
+      description: >
+        External table for all skills primary keys from builds
+      external:
+        location: "@poe_elt.externals.gs_build/allskills"
+        file_format: >
+          ( TYPE = JSON )
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_class_names
+      ext_full_refresh: true
+      description: >
+        External table for class names primary keys from builds
+      external:
+        location: "@poe_elt.externals.gs_build/classnames"
+        file_format: >
+          ( TYPE = JSON )
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_unique_items
+      ext_full_refresh: true
+      description: >
+        External table for unique items primary keys from builds
+      external:
+        location: "@poe_elt.externals.gs_build/uniqueitems"
+        file_format: >
+          ( TYPE = JSON )
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_keystones
+      ext_full_refresh: true
+      description: >
+        External table for keystones primary keys from builds
+      external:
+        location: "@poe_elt.externals.gs_build/keystones"
+        file_format: >
+          ( TYPE = JSON )
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_masteries
+      ext_full_refresh: true
+      description: >
+        External table for masteries primary keys from builds
+      external:
+        location: "@poe_elt.externals.gs_build/masteries"
+        file_format: >
+          ( TYPE = JSON )
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_build_dims
+      ext_full_refresh: true
+      description: >
+        External table for other dimensional data from builds
+      external:
+        location: "@poe_elt.externals.gs_build/build_dims"
+        file_format: >
+          ( TYPE = JSON )
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')
+    - name: ext_skill_details
+      ext_full_refresh: true
+      description: >
+        External table for other skill details (dps & support gem usage) from builds
+      external:
+        location: "@poe_elt.externals.gs_build/skilldetails"
+        file_format: >
+          ( TYPE = JSON STRIP_OUTER_ARRAY = TRUE)
+        integration: GCS_N_INT
+        partitions:
+          - name: date
+            data_type: date
+            expression: to_date(substr(METADATA$FILENAME,-15,10),'YYYY-MM-DD')  
+      columns:
+        - name: name
+          data_type: varchar
+        - name: supportGems
+          data_type: variant
+        - name: dps
+          data_type: variant
