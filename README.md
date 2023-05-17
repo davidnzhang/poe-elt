@@ -36,10 +36,10 @@ While the [official API](https://www.pathofexile.com/developer/docs) will be abl
 
 ## Dashboard
 ![dashboard-class-overview-compressed](https://github.com/davidnzhang/poe-elt/assets/130720014/65584176-78a0-4204-a67c-b2099fe4c73a)
-<br />
+<br />  
 
 ![dashboard-economy-compressed](https://github.com/davidnzhang/poe-elt/assets/130720014/e62b8661-b6f6-49ec-931a-5f37deb1125f)
-<br />
+<br />  
 
 ![dashboard-delve-compressed](https://github.com/davidnzhang/poe-elt/assets/130720014/41df0388-bca2-434c-a6d6-9a78c7dc3f7c)
 
