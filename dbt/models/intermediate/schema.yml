@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: int_items
+  - name: int_dps
+  - name: int_characters
