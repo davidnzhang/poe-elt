@@ -1,0 +1,11 @@
+version: 2
+
+macros:
+  - name: generate_date_key
+    description: >
+      This macro creates a "smart key" from the date field.
+    arguments:
+      - name: date
+        type: date
+        description: > 
+          Date value to be converted to a smart key.
