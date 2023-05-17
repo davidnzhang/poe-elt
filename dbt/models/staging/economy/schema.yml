@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_unique_weapon
+  - name: stg_unique_armour
+  - name: stg_unique_accessory
+  - name: stg_unique_flask
+  - name: stg_unique_jewel
+  - name: stg_skill_gem
+  - name: stg_cluster_jewel
