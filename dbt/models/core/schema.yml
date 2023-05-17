@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_items
+  - name: dim_characters
+  - name: dim_date
+  - name: fct_characters
+  - name: fct_global_prices
+  - name: inventory
