@@ -1,5 +1,5 @@
 # Path Of Exile Data Pipeline
-A data pipeline with Snowflake, dbt, Airflow, Docker, Terraform, and GCP
+An ELT pipeline with Snowflake, dbt, Airflow, Docker, Terraform, and GCP
 
 ## Description
 Path of Exile is a multiplayer action role-playing game with a focus on fast-paced combat and deep character customisation. Notorious for having a high level of complexity in both its [core mechanics](https://www.pathofexile.com/passive-skill-tree) and [itemisation](https://www.reddit.com/r/pathofexile/comments/g1ksx2/what_returning_after_a_few_years_feels_like), the use of a slew of third party tools such as build planners, item filters, and trading apps is often a neccessity for most players to fully enjoy the game. Nevertheless, the game has attracted a growing fanbase of dedicated players, including content creators, [build theorists](https://www.reddit.com/r/pathofexile/comments/scgko9/ms_painta_bit_early_but_we_got_the_manifesto_and/), and casual gamers.
