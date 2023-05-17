@@ -34,6 +34,9 @@ While the [official API](https://www.pathofexile.com/developer/docs) will be abl
 - Staged data is transformed in dbt via external tables built on top of staging folders
 - Core tables are then consumed by Power BI to gain insights on player character build patterns and economy movement over time
 
+### dbt Lineage Graph
+![dbt-dag](https://github.com/davidnzhang/poe-elt/assets/130720014/9a896064-6b2d-4c1e-b9b3-03693c73b542)
+
 ## Dashboard
 ### Class Overview
 ![dashboard-class-overview-compressed](https://github.com/davidnzhang/poe-elt/assets/130720014/65584176-78a0-4204-a67c-b2099fe4c73a)
