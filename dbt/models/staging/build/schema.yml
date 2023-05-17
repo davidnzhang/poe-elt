@@ -1,0 +1,16 @@
+version: 2    
+
+models:
+  - name: stg_build_dims
+  - name: stg_active_skill_use
+  - name: stg_all_skill_use
+  - name: stg_unique_item_use
+  - name: stg_keystone_use
+  - name: stg_mastery_use
+  - name: stg_active_skills
+  - name: stg_all_skills
+  - name: stg_unique_items
+  - name: stg_keystones
+  - name: stg_masteries
+  - name: stg_class_names
+  - name: stg_skill_details
