@@ -12,6 +12,8 @@ The pipeline ingests daily leaderboard and economy data from a third-party API (
 ## Dataset
 [poe.ninja](https://poe.ninja/) is a third-party website that queries the official Path of Exile ladder and trade APIs. Data is provided as a snapshot at the time of query and is available as nested json files, split by the API used. In the case of economy data this is further subdivided based on the item category in the corresponding API call.
 
+Data collection began one month post league launch, and the ingestion workflow will be triggered daily at 12am UTC until end of league in August.
+
 While the [official API](https://www.pathofexile.com/developer/docs) will be able to provide a more complete picture of player data and returns it in a format more conducive to storage in a relational warehouse, it is currently restricted by rate limits therefore making full daily extracts difficult to achieve.
 
 ## Tools & Technologies
