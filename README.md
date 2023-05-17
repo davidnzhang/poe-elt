@@ -30,14 +30,16 @@ While the [official API](https://www.pathofexile.com/developer/docs) will be abl
 
 ### Daily ELT Flow
 - Leaderboard and in-game economy data collected from the poe.ninja API is moved to a raw google cloud storage bucket
-- Raw data is preprocessed using Airflow and stored in staging folders
+- Raw data is preprocessed and stored in staging folders
 - Staged data is transformed in dbt via external tables built on top of staging folders
 - Core tables are then consumed by Power BI to gain insights on player character build patterns and economy movement over time
 
 ## Dashboard
 ![dashboard-class-overview-compressed](https://github.com/davidnzhang/poe-elt/assets/130720014/65584176-78a0-4204-a67c-b2099fe4c73a)
 
+
 ![dashboard-economy-compressed](https://github.com/davidnzhang/poe-elt/assets/130720014/e62b8661-b6f6-49ec-931a-5f37deb1125f)
+
 
 ![dashboard-delve-compressed](https://github.com/davidnzhang/poe-elt/assets/130720014/41df0388-bca2-434c-a6d6-9a78c7dc3f7c)
 
