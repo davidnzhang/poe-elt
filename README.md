@@ -1,4 +1,4 @@
-### Path Of Exile Data Pipeline
+# Path Of Exile Data Pipeline
 A data pipeline with Snowflake, dbt, Airflow, Docker, Terraform, and GCP
 
 ## Description
@@ -26,9 +26,9 @@ While the [official API](https://www.pathofexile.com/developer/docs) will be abl
 - Languages - SQL, Python
 
 ## Architecture
-![architecture](https://github.com/davidnzhang/poe-elt/assets/130720014/10e4fdea-ac4d-4b53-ba30-f1a128d2ab9a)
+![architecture](https://github.com/davidnzhang/poe-elt/assets/130720014/f03e14d9-b875-4ca1-a606-bbb79a820935)
 
-# Daily ELT Flow
+### Daily ELT Flow
 - Leaderboard and in-game economy data collected from the poe.ninja API is moved to a raw google cloud storage bucket
 - Raw data is preprocessed using Airflow and stored in staging folders
 - Staged data is transformed in dbt via external tables built on top of staging folders
