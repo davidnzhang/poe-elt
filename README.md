@@ -14,7 +14,7 @@ The pipeline ingests daily leaderboard and economy data from a third-party API (
 
 Data collection began one month post league launch, and the ingestion workflow will be triggered daily at 12am UTC until end of league in August.
 
-While the [official API](https://www.pathofexile.com/developer/docs) will be able to provide a more complete picture of player data and returns it in a format more conducive to storage in a relational warehouse, it is currently restricted by rate limits therefore making full daily extracts difficult to achieve.
+While the [official API](https://www.pathofexile.com/developer/docs) will be able to provide a more complete picture of player data and return it in a format more conducive to analysis and storage in a relational warehouse, it is currently restricted by rate limits therefore making full daily extracts difficult to achieve.
 
 ## Tools & Technologies
 - Cloud - [Google Cloud Platform](https://cloud.google.com/)
