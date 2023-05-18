@@ -34,7 +34,7 @@ While the [official API](https://www.pathofexile.com/developer/docs) will be abl
 - Leaderboard and in-game economy data collected from the poe.ninja API is moved to a raw google cloud storage bucket
 - Raw data is preprocessed and stored in staging folders
 - Staged data is transformed in dbt via external tables built on top of staging folders
-- Core tables are then consumed by Power BI to gain insights on player character build patterns and economy movement over time
+- Core tables are then consumed by Power BI to gain insights on player character build patterns and economy movements over time
 
 ### dbt Lineage Graph
 ![dbt-dag](https://github.com/davidnzhang/poe-elt/assets/130720014/9a896064-6b2d-4c1e-b9b3-03693c73b542)
